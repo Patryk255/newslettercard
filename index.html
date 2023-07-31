@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sign-up form start -->
+<div id="card">
+  <div class="inCardContentLeft">
+    <h1>Stay updated!</h1>
+
+  <p>Join 60,000+ product managers receiving monthly updates on:</p>
+  <ul>
+    <li><p>Product discovery and building what matters</p></li>
+    <li><p>Measuring to ensure updates are a success</p></li>
+    <li><p>And much more!</p></li>
+  </ul>
+  
+ 
+  <div class="inputTexts"><p class="emailText">Email address</p> <p id="errorM"></p></div>
+
+  <input type="text" id="email" placeholder="email@company.com">
+  <div class="button"><button>Subscribe to monthly newsletter</button></div>
+  
+  
+</div>
+<div class="inCardContentRight">
+  <img src="assets/images/illustration-sign-up-desktop.svg" alt="newsletter illustration">
+</div>
+  
+</div>
+  
+
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+<div class="hide">
+  Thanks for subscribing!
+
+  A confirmation email has been sent to ash@loremcompany.com. 
+  Please open it and click the button inside to confirm your subscription.
+
+  Dismiss message
+</div>
+  
+
+  <!-- Success message end -->
+  
+  <script src="script.js"></script>
+</body>
+</html>

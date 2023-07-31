@@ -1,0 +1,184 @@
+// Primary
+$tomato: hsl(4, 100%, 67%);
+// Neutral
+$darkSlateGrey: hsl(234, 29%, 20%);
+$charcoalGrey: hsl(235, 18%, 26%);
+$grey: hsl(231, 7%, 60%);
+$white: hsl(0, 0%, 100%);
+$fontSize: 16px;
+$font:  'Roboto', sans-serif;
+
+
+
+
+
+body {
+    background-color: $charcoalGrey;
+    font-family: $font;
+    font-size: $fontSize;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+#card{
+    display: flex;
+    background-color: $white;
+    padding: 1.2rem;
+    border-radius: 20px;
+    .inCardContentLeft{
+        padding: 2rem;
+        padding-top: 3rem;
+        h1{
+            font-size: 58px;
+            font-weight: 400;
+            color: $darkSlateGrey;
+            margin-bottom: 1.5rem;
+        }
+        .inputTexts{
+            position: relative;
+            p{
+            
+            color: $charcoalGrey;
+        }
+        #errorM{
+            position: absolute;
+            // margin-left: auto;
+            // margin-right: auto;
+            top:0;
+            right: 30px;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            color: red;
+        }
+        }
+        
+        
+        ul{
+            padding-left: 1.5rem;
+            
+            
+            li{
+                list-style-image: url(/assets/images/icon-list.svg) ;
+                line-height: 2;
+                vertical-align: middle;
+                p{
+                    color: $charcoalGrey;
+                    margin: 0;
+                    margin-left: 10px;
+                }
+                
+            }
+        }
+        .emailText{
+            font-size: 12px;
+            color:$darkSlateGrey;
+            font-weight: 700;
+            margin-top: 1.5rem;
+        }
+        #email{
+            width: 75%;
+            height: 40px;
+            padding: 5px 20px;
+            border-radius: 6px;
+        }
+        .button{
+            margin-top: 1.5rem;
+            button{
+                width: 85%;
+                height: 50px;
+                background-color: $darkSlateGrey;
+                border: none;
+                border-radius: 6px;
+                color: $white;
+                font-weight: 700;
+            }
+        }
+    }
+    .inCardContentRight{
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@media (width <= 500px) {
+    body{
+        height: 100%;
+        width: 100vw;
+        justify-content: baseline;
+        align-items:baseline;
+    }
+    #card{
+        flex-direction: column-reverse;
+        border-radius: 0%;
+        margin: 0;
+        padding: 0;
+        width:100vw;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        
+        .inCardContentLeft{
+            
+            align-items: center;
+            h1{
+                font-size: 42px;
+                font-weight: 700;
+            }
+            p{
+                width: 100%;
+            }
+            #email{
+                width: 87%;
+            }
+            .button{
+                button{
+                    width: 100%;
+                }
+            }
+            ul{
+                li{
+                    line-height: 1.5;
+                }
+            }
+        }
+        .inCardContentRight{
+            img{
+                margin-top: 0;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0px 0px 20px 20px;
+                background-color: $tomato;
+
+                
+            }
+        }
+    }
+    
+}
+.correct{
+    border: 1px solid $grey;
+}
+
+.error{
+    color: red;
+    border: 1px solid red;
+    background-color: hsl(4, 100%, 67%,0.1);
+}
+
+.error:focus{
+    border: 2px solid red;
+    outline: none;
+}
+
+.hide{
+    display: none;
+}
+

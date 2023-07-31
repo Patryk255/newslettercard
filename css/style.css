@@ -1,0 +1,150 @@
+body {
+  background-color: hsl(235, 18%, 26%);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+#card {
+  display: flex;
+  background-color: hsl(0, 0%, 100%);
+  padding: 1.2rem;
+  border-radius: 20px;
+}
+#card .inCardContentLeft {
+  padding: 2rem;
+  padding-top: 3rem;
+}
+#card .inCardContentLeft h1 {
+  font-size: 58px;
+  font-weight: 400;
+  color: hsl(234, 29%, 20%);
+  margin-bottom: 1.5rem;
+}
+#card .inCardContentLeft .inputTexts {
+  position: relative;
+}
+#card .inCardContentLeft .inputTexts p {
+  color: hsl(235, 18%, 26%);
+}
+#card .inCardContentLeft .inputTexts #errorM {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: red;
+}
+#card .inCardContentLeft ul {
+  padding-left: 1.5rem;
+}
+#card .inCardContentLeft ul li {
+  list-style-image: url(/assets/images/icon-list.svg);
+  line-height: 2;
+  vertical-align: middle;
+}
+#card .inCardContentLeft ul li p {
+  color: hsl(235, 18%, 26%);
+  margin: 0;
+  margin-left: 10px;
+}
+#card .inCardContentLeft .emailText {
+  font-size: 12px;
+  color: hsl(234, 29%, 20%);
+  font-weight: 700;
+  margin-top: 1.5rem;
+}
+#card .inCardContentLeft #email {
+  width: 75%;
+  height: 40px;
+  padding: 5px 20px;
+  border-radius: 6px;
+}
+#card .inCardContentLeft .button {
+  margin-top: 1.5rem;
+}
+#card .inCardContentLeft .button button {
+  width: 85%;
+  height: 50px;
+  background-color: hsl(234, 29%, 20%);
+  border: none;
+  border-radius: 6px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+}
+#card .inCardContentRight img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (width <= 500px) {
+  body {
+    height: 100%;
+    width: 100vw;
+    justify-content: baseline;
+    align-items: baseline;
+  }
+  #card {
+    flex-direction: column-reverse;
+    border-radius: 0%;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #card .inCardContentLeft {
+    align-items: center;
+  }
+  #card .inCardContentLeft h1 {
+    font-size: 42px;
+    font-weight: 700;
+  }
+  #card .inCardContentLeft p {
+    width: 100%;
+  }
+  #card .inCardContentLeft #email {
+    width: 87%;
+  }
+  #card .inCardContentLeft .button button {
+    width: 100%;
+  }
+  #card .inCardContentLeft ul li {
+    line-height: 1.5;
+  }
+  #card .inCardContentRight img {
+    margin-top: 0;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0px 0px 20px 20px;
+    background-color: hsl(4, 100%, 67%);
+  }
+}
+.correct {
+  border: 1px solid hsl(231, 7%, 60%);
+}
+
+.error {
+  color: red;
+  border: 1px solid red;
+  background-color: hsla(4, 100%, 67%, 0.1);
+}
+
+.error:focus {
+  border: 2px solid red;
+  outline: none;
+}
+
+.hide {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
