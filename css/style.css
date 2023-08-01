@@ -11,66 +11,86 @@ body {
   padding: 0;
   margin: 0;
 }
+body .correct {
+  border: 1px solid hsl(231, 7%, 60%);
+}
+body .error {
+  color: red;
+  border: 1px solid red;
+  background-color: hsla(4, 100%, 67%, 0.1);
+}
+body .error:focus {
+  border: 2px solid red;
+  outline: none;
+}
+body .hide {
+  display: none;
+}
 
-#card {
+#card .inCardContent {
   display: flex;
   background-color: hsl(0, 0%, 100%);
   padding: 1.2rem;
   border-radius: 20px;
 }
-#card .inCardContentLeft {
+#card .inCardContent .inCardContentLeft {
   padding: 2rem;
   padding-top: 3rem;
 }
-#card .inCardContentLeft h1 {
+#card .inCardContent .inCardContentLeft h1 {
   font-size: 58px;
   font-weight: 400;
   color: hsl(234, 29%, 20%);
   margin-bottom: 1.5rem;
 }
-#card .inCardContentLeft .inputTexts {
+#card .inCardContent .inCardContentLeft .inputTexts {
   position: relative;
 }
-#card .inCardContentLeft .inputTexts p {
+#card .inCardContent .inCardContentLeft .inputTexts p {
   color: hsl(235, 18%, 26%);
 }
-#card .inCardContentLeft .inputTexts #errorM {
+#card .inCardContent .inCardContentLeft .inputTexts #errorM {
   position: absolute;
-  top: 0;
-  right: 30px;
+  top: 0.5rem;
+  padding: 0;
+  margin: 0;
+  right: 1rem;
   transform: translate(-50%, -50%);
   font-size: 12px;
   color: red;
 }
-#card .inCardContentLeft ul {
+#card .inCardContent .inCardContentLeft ul {
   padding-left: 1.5rem;
 }
-#card .inCardContentLeft ul li {
+#card .inCardContent .inCardContentLeft ul li {
   list-style-image: url(/assets/images/icon-list.svg);
   line-height: 2;
   vertical-align: middle;
 }
-#card .inCardContentLeft ul li p {
+#card .inCardContent .inCardContentLeft ul li p {
   color: hsl(235, 18%, 26%);
   margin: 0;
   margin-left: 10px;
 }
-#card .inCardContentLeft .emailText {
+#card .inCardContent .inCardContentLeft .emailText {
   font-size: 12px;
   color: hsl(234, 29%, 20%);
   font-weight: 700;
   margin-top: 1.5rem;
 }
-#card .inCardContentLeft #email {
+#card .inCardContent .inCardContentLeft #email {
   width: 75%;
   height: 40px;
   padding: 5px 20px;
   border-radius: 6px;
 }
-#card .inCardContentLeft .button {
+#card .inCardContent .inCardContentLeft input:focus {
+  border: 2px solid hsl(4, 100%, 67%);
+}
+#card .inCardContent .inCardContentLeft .button {
   margin-top: 1.5rem;
 }
-#card .inCardContentLeft .button button {
+#card .inCardContent .inCardContentLeft .button button {
   width: 85%;
   height: 50px;
   background-color: hsl(234, 29%, 20%);
@@ -79,7 +99,11 @@ body {
   color: hsl(0, 0%, 100%);
   font-weight: 700;
 }
-#card .inCardContentRight img {
+#card .inCardContent .inCardContentLeft .button button:hover {
+  background: linear-gradient(45deg, hsl(4, 100%, 67%), #ff596a);
+  cursor: pointer;
+}
+#card .inCardContent .inCardContentRight img {
   max-width: 100%;
   height: auto;
 }
@@ -91,7 +115,7 @@ body {
     justify-content: baseline;
     align-items: baseline;
   }
-  #card {
+  #card .inCardContent {
     flex-direction: column-reverse;
     border-radius: 0%;
     margin: 0;
@@ -101,26 +125,34 @@ body {
     justify-content: center;
     align-items: center;
   }
-  #card .inCardContentLeft {
+  #card .inCardContent .inCardContentLeft {
     align-items: center;
   }
-  #card .inCardContentLeft h1 {
+  #card .inCardContent .inCardContentLeft h1 {
     font-size: 42px;
     font-weight: 700;
   }
-  #card .inCardContentLeft p {
+  #card .inCardContent .inCardContentLeft p {
     width: 100%;
   }
-  #card .inCardContentLeft #email {
+  #card .inCardContent .inCardContentLeft #email {
     width: 87%;
   }
-  #card .inCardContentLeft .button button {
+  #card .inCardContent .inCardContentLeft .button button {
     width: 100%;
   }
-  #card .inCardContentLeft ul li {
+  #card .inCardContent .inCardContentLeft ul li {
     line-height: 1.5;
   }
-  #card .inCardContentRight img {
+  #card .inCardContent .inCardContentLeft .inputTexts {
+    position: relative;
+  }
+  #card .inCardContent .inCardContentLeft .inputTexts #errorM {
+    position: absolute;
+    right: -2rem;
+    z-index: 50;
+  }
+  #card .inCardContent .inCardContentRight img {
     margin-top: 0;
     height: 100%;
     object-fit: cover;
@@ -128,23 +160,74 @@ body {
     background-color: hsl(4, 100%, 67%);
   }
 }
-.correct {
-  border: 1px solid hsl(231, 7%, 60%);
+.successMessage {
+  min-width: 15%;
+  min-height: 31vh;
+  background-color: hsl(0, 0%, 100%);
+  padding: 3rem;
+  border-radius: 2rem;
+  position: relative;
+}
+.successMessage img {
+  width: 3rem;
+}
+.successMessage h1 {
+  width: 10ch;
+  font-size: 2.5rem;
+  color: hsl(234, 29%, 20%);
+}
+.successMessage p {
+  width: 40ch;
+  color: hsl(235, 18%, 26%);
+  font-size: 0.8rem;
+}
+.successMessage button {
+  width: 77%;
+  min-height: 3rem;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
 }
 
-.error {
-  color: red;
-  border: 1px solid red;
-  background-color: hsla(4, 100%, 67%, 0.1);
-}
-
-.error:focus {
-  border: 2px solid red;
-  outline: none;
-}
-
-.hide {
-  display: none;
+@media (width <= 40em) {
+  body {
+    height: 100vh;
+    background-color: hsl(0, 0%, 100%);
+  }
+  .successMessage {
+    background-color: hsl(0, 0%, 100%);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 50%;
+    width: 100%;
+  }
+  .successMessage h1 {
+    width: 80%;
+    margin-top: 2rem;
+    color: hsl(234, 29%, 20%);
+    font-size: 2.5rem;
+  }
+  .successMessage p {
+    max-width: 38ch;
+    color: hsl(235, 18%, 26%);
+    line-height: 1.5;
+    margin-bottom: 3rem;
+  }
+  .successMessage button {
+    width: 90%;
+    min-height: 3rem;
+    background-color: hsl(234, 29%, 20%);
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+    border: none;
+    border-radius: 0.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,6 @@
 // Primary
 $tomato: hsl(4, 100%, 67%);
+$veryTomato: #ff596a;
 // Neutral
 $darkSlateGrey: hsl(234, 29%, 20%);
 $charcoalGrey: hsl(235, 18%, 26%);
@@ -24,13 +25,34 @@ body {
     height: 100vh;
     padding: 0;
     margin: 0;
+    .correct{
+        border: 1px solid $grey;
+    }
+    
+    .error{
+        color: red;
+        border: 1px solid red;
+        background-color: hsl(4, 100%, 67%,0.1);
+    }
+    
+    .error:focus{
+        border: 2px solid red;
+        outline: none;
+    }
+    
+    .hide{
+        display: none;
+    }
 }
 
 #card{
-    display: flex;
-    background-color: $white;
-    padding: 1.2rem;
-    border-radius: 20px;
+    
+    
+    .inCardContent{
+        display: flex;
+        background-color: $white;
+        padding: 1.2rem;
+        border-radius: 20px;
     .inCardContentLeft{
         padding: 2rem;
         padding-top: 3rem;
@@ -50,8 +72,10 @@ body {
             position: absolute;
             // margin-left: auto;
             // margin-right: auto;
-            top:0;
-            right: 30px;
+            top:0.5rem;
+            padding: 0;
+            margin: 0;
+            right: 1rem;
             transform: translate(-50%, -50%);
             font-size: 12px;
             color: red;
@@ -87,6 +111,9 @@ body {
             padding: 5px 20px;
             border-radius: 6px;
         }
+        input:focus{
+            border: 2px solid $tomato;
+        }
         .button{
             margin-top: 1.5rem;
             button{
@@ -98,6 +125,10 @@ body {
                 color: $white;
                 font-weight: 700;
             }
+            button:hover{
+                background: linear-gradient(45deg, $tomato, $veryTomato);
+                cursor: pointer;
+            }
         }
     }
     .inCardContentRight{
@@ -106,6 +137,7 @@ body {
             height: auto;
         }
     }
+}
 }
 
 @media (width <= 500px) {
@@ -116,7 +148,8 @@ body {
         align-items:baseline;
     }
     #card{
-        flex-direction: column-reverse;
+        .inCardContent{
+            flex-direction: column-reverse;
         border-radius: 0%;
         margin: 0;
         padding: 0;
@@ -124,6 +157,7 @@ body {
         height: 100%;
         justify-content: center;
         align-items: center;
+        
         
         .inCardContentLeft{
             
@@ -148,6 +182,14 @@ body {
                     line-height: 1.5;
                 }
             }
+            .inputTexts{
+                position: relative;
+            #errorM{
+                position: absolute;
+                right: -2rem;
+                z-index: 50;
+            }
+        }
         }
         .inCardContentRight{
             img{
@@ -161,24 +203,81 @@ body {
             }
         }
     }
+    }
     
 }
-.correct{
-    border: 1px solid $grey;
+
+.successMessage{
+    min-width: 15%;
+    min-height: 31vh;
+    background-color: $white;
+    padding: 3rem;
+    border-radius: 2rem;
+    position: relative;
+    img{
+        width: 3rem;
+    }
+    h1{
+        width: 10ch;
+        font-size: 2.5rem;
+        color: $darkSlateGrey;
+    }
+    p{
+        width: 40ch;
+        color: $charcoalGrey;
+        font-size: 0.800rem;
+    }
+    button{
+        width: 77%;
+        min-height: 3rem;
+        position: absolute;
+        bottom: 0.5rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $darkSlateGrey;
+        color: $white;
+        font-weight: 700;
+        border: none;
+        border-radius: 0.5rem;
+        
+    }
 }
 
-.error{
-    color: red;
-    border: 1px solid red;
-    background-color: hsl(4, 100%, 67%,0.1);
-}
+@media (width <= 40em) {
+    body{
+        height: 100vh;
+        background-color: $white;
+    }
+    .successMessage{
+        background-color: $white;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 50%;
+        width: 100%;
+        
 
-.error:focus{
-    border: 2px solid red;
-    outline: none;
+        h1{
+            width: 80%;
+            margin-top: 2rem;
+            color: $darkSlateGrey;
+            font-size: 2.5rem;
+        }
+        p{
+            max-width: 38ch;
+            color: $charcoalGrey;
+            line-height: 1.5;
+            margin-bottom: 3rem;
+        }
+        button{
+            width: 90%;
+            min-height: 3rem;
+            
+            // transform: translate(-50%, -50%);
+            background-color: $darkSlateGrey;
+            color: $white;
+            font-weight: 700;
+            border: none;
+            border-radius: 0.5rem;
+        }
+    }
 }
-
-.hide{
-    display: none;
-}
-
