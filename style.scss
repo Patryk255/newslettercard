@@ -125,19 +125,24 @@ body {
         }
         .button{
             margin-top: 1.5rem;
+            
             button{
                 width: 91%;
                 min-height: 55px;
+                transition: background-color 0.4s;
                 background-color: $darkSlateGrey;
                 border: none;
                 border-radius: 6px;
                 color: $white;
                 font-weight: 700;
                 
+                
             }
             button:hover{
-                background: linear-gradient(45deg, $tomato, $veryTomato);
+                // background: linear-gradient(45deg, $tomato, $veryTomato);
+                background-color: #ff596a;
                 cursor: pointer;
+                
                 
                 
             }
