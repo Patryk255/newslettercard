@@ -6,10 +6,12 @@ const errorM = document.querySelector('#errorM');
 const mainCard = document.querySelector('.inCardContent');
 const Card = document.querySelector('#card');
 const successMessage = document.querySelector('.successMessage');
+const mailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
 
 
 email.addEventListener('change', function() {
-    if(email.value.includes('@') && email.value.includes('.')){
+    if(email.value.match(mailRegex)){
         email.classList.remove('error');
         email.classList.add('correct');
         errorM.innerHTML = "";
