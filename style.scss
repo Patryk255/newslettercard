@@ -56,6 +56,10 @@ body {
     .inCardContentLeft{
         padding: 2rem;
         padding-top: 3rem;
+        p{
+            color: $charcoalGrey;
+            width: 40ch;
+        }
         h1{
             font-size: 58px;
             font-weight: 700;
@@ -88,7 +92,7 @@ body {
             
             
             li{
-                list-style-image: url(/assets/images/icon-list.svg) ;
+                list-style-image: url(../assets/images/icon-list.svg) ;
                 line-height: 2;
                 vertical-align: middle;
                 p{
@@ -107,7 +111,7 @@ body {
         }
         #email{
             width: 75%;
-            height: 40px;
+            height: 45px;
             padding: 5px 20px;
             border-radius: 6px;
             
@@ -122,7 +126,7 @@ body {
             margin-top: 1.5rem;
             button{
                 width: 85%;
-                height: 50px;
+                min-height: 55px;
                 background-color: $darkSlateGrey;
                 border: none;
                 border-radius: 6px;

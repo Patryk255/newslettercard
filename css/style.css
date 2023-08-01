@@ -37,6 +37,10 @@ body .hide {
   padding: 2rem;
   padding-top: 3rem;
 }
+#card .inCardContent .inCardContentLeft p {
+  color: hsl(235, 18%, 26%);
+  width: 40ch;
+}
 #card .inCardContent .inCardContentLeft h1 {
   font-size: 58px;
   font-weight: 700;
@@ -63,7 +67,7 @@ body .hide {
   padding-left: 1.5rem;
 }
 #card .inCardContent .inCardContentLeft ul li {
-  list-style-image: url(/assets/images/icon-list.svg);
+  list-style-image: url(../assets/images/icon-list.svg);
   line-height: 2;
   vertical-align: middle;
 }
@@ -80,7 +84,7 @@ body .hide {
 }
 #card .inCardContent .inCardContentLeft #email {
   width: 75%;
-  height: 40px;
+  height: 45px;
   padding: 5px 20px;
   border-radius: 6px;
 }
@@ -95,7 +99,7 @@ body .hide {
 }
 #card .inCardContent .inCardContentLeft .button button {
   width: 85%;
-  height: 50px;
+  min-height: 55px;
   background-color: hsl(234, 29%, 20%);
   border: none;
   border-radius: 6px;
