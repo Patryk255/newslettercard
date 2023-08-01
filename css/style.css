@@ -84,6 +84,9 @@ body .hide {
   padding: 5px 20px;
   border-radius: 6px;
 }
+#card .inCardContent .inCardContentLeft input {
+  border: 2px solid hsl(4, 100%, 67%);
+}
 #card .inCardContent .inCardContentLeft input:focus {
   border: 2px solid hsl(4, 100%, 67%);
 }

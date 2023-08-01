@@ -110,6 +110,10 @@ body {
             height: 40px;
             padding: 5px 20px;
             border-radius: 6px;
+            
+        }
+        input{
+            border: 2px solid $tomato;
         }
         input:focus{
             border: 2px solid $tomato;
